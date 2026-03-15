@@ -1,40 +1,45 @@
+
+
+
+
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, TextInput } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 const App = () => {
   const [text, setText] = useState("");
-  const [displayText, setDisplayText] = useState("");
+  const [display, setDisplay] = useState("");
 
   const ADD = () => {
-    // This updates the bottom text only when you click ADD
-    setDisplayText(text);
-    setText(""); 
+    if (text.trim() === "") return; // Prevent adding empty strings
+    setDisplay(text);
+    setText("");
   };
 
   return (
     <View style={styles.container}>
-      {/* Input Row */}
+      {/* Fixed: Use inputContainer style here */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Type here..."
+          placeholder="type something..."
           placeholderTextColor="#888"
           value={text}
+          // Fixed: Use onChangeText to get the string directly
           onChangeText={(value) => setText(value)}
         />
-        <TouchableOpacity style={styles.button} onPress={ADD}>
+        <TouchableOpacity style={styles.butn} onPress={ADD}>
           <Text style={styles.buttonText}>ADD</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Real-time display (shows as you type) */}
       <View style={styles.resultView}>
-        <Text style={styles.label}>Typing:</Text>
-        <Text style={styles.liveText}>{text || "Waiting for input..."}</Text>
+        <Text style={styles.label}>Typing..</Text>
+        <Text style={styles.liveText}>{text || "Waiting for Input..."}</Text>
         
-        {/* Submitted display (shows after clicking ADD) */}
-        <Text style={[styles.label, {marginTop: 20}]}>Last Added:</Text>
-        <Text style={styles.addedText}>{displayText || "Nothing added yet"}</Text>
+        <View style={{ marginTop: 20 }}>
+          <Text style={styles.label}>Last Added :</Text>
+          <Text style={styles.liveText}>{display || "nothing added yet"}</Text>
+        </View>
       </View>
     </View>
   );
@@ -43,12 +48,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100, // Move it down from the top
+    paddingTop: 100,
     alignItems: "center",
     backgroundColor: "black",
   },
   inputContainer: {
-    flexDirection: "row",
+    flexDirection: 'row', // This aligns input and button horizontally
     alignItems: "center",
     width: "90%",
     marginBottom: 30,
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     color: "black",
   },
-  button: {
+  butn: {
     height: 50,
     backgroundColor: "#1E90FF",
     justifyContent: "center",
@@ -91,11 +96,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginTop: 5,
   },
-  addedText: {
-    color: "white",
-    fontSize: 18,
-    marginTop: 5,
-  }
 });
 
 export default App;
