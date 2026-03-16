@@ -105,18 +105,19 @@
 
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-
+import PageScrolview from "../TODOAPP_REACT-NATIVE/components/pagescrollview"
 
 
 const App =() =>{
   return(
 <View style={styles.containner}>
-  <Text style={styles.heading}>Flex box</Text>
+  {/* <Text style={styles.heading}>Flex box</Text>
   <View style={styles.boxCntainer}>
     <View style={styles.box1}><Text style={styles.boxtext}>1</Text></View>
     <View style={styles.box2}><Text style={styles.boxtext}>2</Text></View>
     <View style={styles.box3}><Text style={styles.boxtext}>3</Text></View>
-  </View>
+  </View> */}
+  <PageScrolview />
 </View>
   )
 }
@@ -125,43 +126,43 @@ const styles = StyleSheet.create({
   containner:{
     flex:1,
     // justifyContent:"center"
-    alignItems:"center",
-    backgroundColor:"black"
+    // alignItems:"center",
+    // backgroundColor:"black"
   },
-  heading:{
-    color:"white",
-    fontSize:20,
-    fontWeight:"bold"
-  },
-  boxCntainer:{
-    width:"90%",
-    flexDirection:"row",
-    alignItems:"center",
-    // justifyContent:"space-between",
-    justifyContent:"space-around",
-    // justifyContent:"flex-end",
+//   heading:{
+//     color:"white",
+//     fontSize:20,
+//     fontWeight:"bold"
+//   },
+//   boxCntainer:{
+//     width:"90%",
+//     flexDirection:"row",
+//     alignItems:"center",
+//     // justifyContent:"space-between",
+//     justifyContent:"space-around",
+//     // justifyContent:"flex-end",
    
-    marginTop: 20,
-  },
-  box1:{
-    backgroundColor:"red",
-    width:80,
-    height:60
-  },
-  box2:{
-backgroundColor:"aqua",
-    width:80,
-    height:60
-  },
-  box3:{
-    backgroundColor:"green",
-    width:80,
-    height:60
-  },
-  boxtext:{
-    color:"white",
-    textAlign:"center"
-  }
+//     marginTop: 20,
+//   },
+//   box1:{
+//     backgroundColor:"red",
+//     width:80,
+//     height:60
+//   },
+//   box2:{
+// backgroundColor:"aqua",
+//     width:80,
+//     height:60
+//   },
+//   box3:{
+//     backgroundColor:"green",
+//     width:80,
+//     height:60
+//   },
+//   boxtext:{
+//     color:"white",
+//     textAlign:"center"
+//   }
   
 })
 export default App
