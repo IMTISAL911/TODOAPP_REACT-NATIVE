@@ -1,6 +1,6 @@
 
 
-
+// todolist code
 
 // import React, { useState } from "react";
 // import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
@@ -100,13 +100,16 @@
 
 // export default App;
 
+// todolist code
+
+
 
 
 
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import PageScrolview from "../TODOAPP_REACT-NATIVE/components/pagescrollview"
-
+import Flatelistpage from "../TODOAPP_REACT-NATIVE/components/flatelist"
 
 const App =() =>{
   return(
@@ -117,7 +120,11 @@ const App =() =>{
     <View style={styles.box2}><Text style={styles.boxtext}>2</Text></View>
     <View style={styles.box3}><Text style={styles.boxtext}>3</Text></View>
   </View> */}
-  <PageScrolview />
+
+
+  {/* <PageScrolview /> */}
+  <Flatelistpage />
+
 </View>
   )
 }
@@ -127,7 +134,7 @@ const styles = StyleSheet.create({
     flex:1,
     // justifyContent:"center"
     // alignItems:"center",
-    // backgroundColor:"black"
+    backgroundColor:"black"
   },
 //   heading:{
 //     color:"white",
