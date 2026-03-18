@@ -49,7 +49,7 @@ const Todo = () =>{
                 
             </View> */}
 <ScrollView
-style={{flex:1}}
+style={{flex:1, width:'90%'}}
 contentContainerStyle={{flexGrow: 1,  paddingHorizontal:20}}
 showsVerticalScrollIndicator={false}
 >
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         fontWeight:"bold"
     },
     resultView: {
-    width: "90%",
+    // width: "90%",
     padding: 20,
     backgroundColor: "#222",
     borderRadius: 10,
@@ -129,11 +129,12 @@ const styles = StyleSheet.create({
     backgroundColor:"red",
     height:50,
     paddingHorizontal:20,
-    // alignItems:"center",
+    alignItems:"center",
     justifyContent:'center',
     marginBottom:10,
     marginTop:10,
     borderRadius:10,
+    width:"80%"
     
   },
   dlettext:{
