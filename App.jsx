@@ -71,8 +71,7 @@
 //     height: 50,
 //     backgroundColor: "#1E90FF",
 //     justifyContent: "center",
-//     paddingHorizontal: 20,
-//     borderTopRightRadius: 10,
+//       borderTopRightRadius: 10,
 //     borderBottomRightRadius: 10,
 //   },
 //   buttonText: {
@@ -98,7 +97,8 @@
 //   },
 // });
 
-// export default App;
+// export default App; paddingHorizontal: 20,
+//  
 
 // todolist code
 
