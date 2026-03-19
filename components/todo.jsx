@@ -66,11 +66,13 @@ showsVerticalScrollIndicator={false}
        </View>
 </ScrollView>
 <TouchableOpacity style={styles.delete} onPress={dleet}>
-    <Text style={styles.dlettext}>DLEET</Text>
+    <Text style={styles.dlettext}>DLEET-DATA</Text>
 </TouchableOpacity>
         </View>
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container:{
