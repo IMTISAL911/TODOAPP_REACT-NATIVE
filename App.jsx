@@ -111,7 +111,7 @@ import { StyleSheet, Text, View } from "react-native";
 import PageScrolview from "../TODOAPP_REACT-NATIVE/components/pagescrollview"
 import Flatelistpage from "../TODOAPP_REACT-NATIVE/components/flatelist"
 import Todo from "../TODOAPP_REACT-NATIVE/components/todo"
-
+import DESIGN from "../TODOAPP_REACT-NATIVE/components/design"
 const App =() =>{
   return(
 <View style={styles.containner}>
@@ -126,7 +126,8 @@ const App =() =>{
   {/* <PageScrolview /> */}
   {/* <Flatelistpage /> */}
 
-<Todo />
+     {/* <Todo /> */} 
+     <DESIGN />
 </View>
   )
 }
