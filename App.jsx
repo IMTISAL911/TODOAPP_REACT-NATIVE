@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 
 
 // todolist code
@@ -106,18 +107,18 @@
 
 
 
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import PageScrolview from "../TODOAPP_REACT-NATIVE/components/pagescrollview"
-import Flatelistpage from "../TODOAPP_REACT-NATIVE/components/flatelist"
-import Todo from "../TODOAPP_REACT-NATIVE/components/todo"
-import DESIGN from "../TODOAPP_REACT-NATIVE/components/design"
-import Home from "../TODOAPP_REACT-NATIVE/screens/Home"
+// import React from "react";
+// import { StyleSheet, Text, View } from "react-native";
+// import PageScrolview from "../TODOAPP_REACT-NATIVE/components/pagescrollview"
+// import Flatelistpage from "../TODOAPP_REACT-NATIVE/components/flatelist"
+// import Todo from "../TODOAPP_REACT-NATIVE/components/todo"
+// import DESIGN from "../TODOAPP_REACT-NATIVE/components/design"
+// import Home from "../TODOAPP_REACT-NATIVE/screens/Home"
 
 
-const App =() =>{
-  return(
-<View style={styles.containner}>
+// const App =() =>{
+//   return(
+// <View style={styles.containner}>
   {/* <Text style={styles.heading}>Flex box</Text>
   <View style={styles.boxCntainer}>
     <View style={styles.box1}><Text style={styles.boxtext}>1</Text></View>
@@ -131,52 +132,66 @@ const App =() =>{
 
      {/* <Todo /> */} 
      {/* <DESIGN /> */}
-     <Home />
-</View>
-  )
-}
+     {/* <Home /> */}
+// </View>
+//   )
+// }
 
-const styles = StyleSheet.create({
-  containner:{
-    flex:1,
-    // justifyContent:"center"
-    // alignItems:"center",
-    backgroundColor:"black"
-  },
-//   heading:{
-//     color:"white",
-//     fontSize:20,
-//     fontWeight:"bold"
+// const styles = StyleSheet.create({
+//   containner:{
+//     flex:1,
+//     // justifyContent:"center"
+//     // alignItems:"center",
+//     backgroundColor:"black"
 //   },
-//   boxCntainer:{
-//     width:"90%",
-//     flexDirection:"row",
-//     alignItems:"center",
-//     // justifyContent:"space-between",
-//     justifyContent:"space-around",
-//     // justifyContent:"flex-end",
+// //   heading:{
+// //     color:"white",
+// //     fontSize:20,
+// //     fontWeight:"bold"
+// //   },
+// //   boxCntainer:{
+// //     width:"90%",
+// //     flexDirection:"row",
+// //     alignItems:"center",
+// //     // justifyContent:"space-between",
+// //     justifyContent:"space-around",
+// //     // justifyContent:"flex-end",
    
-//     marginTop: 20,
-//   },
-//   box1:{
-//     backgroundColor:"red",
-//     width:80,
-//     height:60
-//   },
-//   box2:{
-// backgroundColor:"aqua",
-//     width:80,
-//     height:60
-//   },
-//   box3:{
-//     backgroundColor:"green",
-//     width:80,
-//     height:60
-//   },
-//   boxtext:{
-//     color:"white",
-//     textAlign:"center"
-//   }
+// //     marginTop: 20,
+// //   },
+// //   box1:{
+// //     backgroundColor:"red",
+// //     width:80,
+// //     height:60
+// //   },
+// //   box2:{
+// // backgroundColor:"aqua",
+// //     width:80,
+// //     height:60
+// //   },
+// //   box3:{
+// //     backgroundColor:"green",
+// //     width:80,
+// //     height:60
+// //   },
+// //   boxtext:{
+// //     color:"white",
+// //     textAlign:"center"
+// //   }
   
-})
-export default App
+// })
+// export default App
+
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigation from "./src/navigation/StackNavigation";
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
+  );
+};
+
+export default App;
