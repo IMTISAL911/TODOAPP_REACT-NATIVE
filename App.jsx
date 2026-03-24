@@ -112,6 +112,9 @@ import PageScrolview from "../TODOAPP_REACT-NATIVE/components/pagescrollview"
 import Flatelistpage from "../TODOAPP_REACT-NATIVE/components/flatelist"
 import Todo from "../TODOAPP_REACT-NATIVE/components/todo"
 import DESIGN from "../TODOAPP_REACT-NATIVE/components/design"
+import Home from "../TODOAPP_REACT-NATIVE/screens/Home"
+
+
 const App =() =>{
   return(
 <View style={styles.containner}>
@@ -127,7 +130,8 @@ const App =() =>{
   {/* <Flatelistpage /> */}
 
      {/* <Todo /> */} 
-     <DESIGN />
+     {/* <DESIGN /> */}
+     <Home />
 </View>
   )
 }
