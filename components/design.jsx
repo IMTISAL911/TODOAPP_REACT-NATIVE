@@ -8,19 +8,19 @@ const App = () => {
       <View style={styles.header}>
     
         <View style={styles.curve} />
-        <Text>MY APP</Text>
+        <Text style={{fontWeight:"bold",fontSize:40 }}>MY_APP</Text>
       </View>
        
        <ScrollView style={{marginTop:10}}>
 {[1,2,3,4,5,6,7,8,9,10].map((items) =>
 
-<View style={styles.cartscontainer}>
+<View key={items} style={styles.cartscontainer}>
             <Text>catergy{items}</Text>
 
      <ScrollView horizontal={true} contentContainerStyle={styles.tilesScrollview}>
         {[1,2,3,4,5,6].map((tiles) =>
         
-        <View style={styles.tylescontainer}>
+        <View key={tiles} style={styles.tylescontainer}>
           <Text>tiles{tiles}</Text>
         </View>
         
