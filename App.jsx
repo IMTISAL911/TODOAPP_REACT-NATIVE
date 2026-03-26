@@ -184,14 +184,17 @@ import 'react-native-gesture-handler';
 
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import StackNavigation from "./src/navigation/StackNavigation";
+import StackNavigation from "./src/navigation/Stacknavigation";
 
 const App = () => {
   return (
     <NavigationContainer>
       <StackNavigation />
     </NavigationContainer>
+    
   );
 };
+
+
 
 export default App;
