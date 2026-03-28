@@ -1,125 +1,34 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TouchableOpacity,
-} from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/authSlice";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [secure, setSecure] = useState(true);
+  const dispatch = useDispatch();
 
   const handleLogin = () => {
     if (email === "123@gmail.com" && password === "123") {
-      alert("Login Successful ✅");
-      navigation.replace("home"); // move to Home
+      dispatch(login());
+      navigation.replace("Main"); // 🔥 GO TO DRAWER
     } else {
-      alert("Invalid Email or Password ❌");
+      alert("Invalid credentials");
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>LOGIN SCREEN</Text>
+    <View style={{ flex:1, justifyContent:"center", alignItems:"center" }}>
+      <Text>Login</Text>
 
-      <View style={styles.formContainer}>
-        
-        {/* Email */}
-        <TextInput
-          placeholder="Enter Email"
-          placeholderTextColor="#aaa"
-          value={email}
-          onChangeText={setEmail}
-          style={styles.input}
-        />
+      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
+      <TextInput placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
 
-        {/* Password with Eye Icon */}
-        <View style={styles.passwordContainer}>
-          <TextInput
-            placeholder="Enter Password"
-            placeholderTextColor="#aaa"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={secure}
-            style={styles.passwordInput}
-          />
-
-          <TouchableOpacity onPress={() => setSecure(!secure)}>
-            <Icon
-              name={secure ? "eye-off" : "eye"}
-              size={24}
-              color="#aaa"
-            />
-          </TouchableOpacity>
-        </View>
-
-        {/* Login Button */}
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.btnText}>Login</Text>
-        </TouchableOpacity>
-
-      </View>
+      <TouchableOpacity onPress={handleLogin}>
+        <Text>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default Login;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "black",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  title: {
-    color: "white",
-    fontSize: 24,
-    marginBottom: 30,
-    fontWeight: "bold",
-  },
-
-  formContainer: {
-    width: "80%",
-  },
-
-  input: {
-    backgroundColor: "#222",
-    color: "white",
-    padding: 12,
-    borderRadius: 10,
-    marginBottom: 15,
-  },
-
-  passwordContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#222",
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
-
-  passwordInput: {
-    flex: 1,
-    color: "white",
-    paddingVertical: 12,
-  },
-
-  button: {
-    backgroundColor: "blue",
-    padding: 15,
-    borderRadius: 10,
-    alignItems: "center",
-  },
-
-  btnText: {
-    color: "white",
-    fontWeight: "bold",
-  },
-});
