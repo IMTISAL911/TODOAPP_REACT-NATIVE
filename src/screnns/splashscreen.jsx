@@ -1,33 +1,18 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 
 const Splash = ({ navigation }) => {
-
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace("login"); // move to Login screen
-    }, 3000); // 3 seconds
+      navigation.replace("Login"); // ALWAYS go to login
+    }, 2000);
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>My App</Text>
+    <View style={{ flex:1, justifyContent:"center", alignItems:"center" }}>
+      <Text>Splash Screen</Text>
     </View>
   );
 };
 
 export default Splash;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    color: "#fff",
-    fontSize: 30,
-    fontWeight: "bold",
-  },
-});
